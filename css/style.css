@@ -1,0 +1,245 @@
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+* {
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: aliceblue;
+}
+
+.container {
+    background-color: yellow;
+    min-height: 100vh;
+    border: 1px solid #fff;
+    padding: 0px 0px;
+}
+
+@media (min-width: 576px) {
+    .section {
+        grid-template-columns: 1fr 540px 1fr;
+    }
+
+    .container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .section {
+        grid-template-columns: 1fr 720px 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .section {
+        grid-template-columns: 1fr 960px 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        grid-template-columns: 1fr 1140px 1fr;
+    }
+}
+
+.about,
+.about .container {
+    background-color: seagreen;
+}
+
+.home.section {
+    background-image: url(http://lorempixel.com/output/abstract-q-c-640-480-4.jpg);
+    background-size: cover;
+}
+
+/*
+.home .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}*/
+
+.home .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.home .title {
+    background-color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home .girl {
+    background-color: khaki;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    /* 3 */
+    grid-row-start: 1;
+    grid-row-end: -1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+.home .girl img {
+    max-width: 90%;
+}
+
+/* contacts */
+
+.contacts.section {}
+.contacts .container {
+    display: flex;
+    align-items: center;
+}
+.contacts .image {
+    width: 40%;
+}
+.contacts .text {
+    width: 60%;
+}
+.contacts .image .email {
+    
+}
+.contacts .image .email a {
+    display: block;
+    color: white;
+    background-color: blue;
+    border-radius: 100%;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 1s linear;
+    margin-left: auto;
+    margin-right: 2em;
+}
+.contacts .image .email a:hover {
+   background-color: green; 
+}
+.contacts .image .email a i {
+    font-size: 5em;
+}
+
+.contacts .services {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    line-height: 1.5em;
+}
+.contacts .text p {
+    margin: 0 0 1em 0;
+    font-size: 1.5em;
+}
+.contacts .services h4 {
+    margin: 0;
+    padding: 0;    
+}
+.contacts .services ul,
+.contacts .services li { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* header */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: salmon;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: aquamarine;
+}
+
+@media (min-width: 576px) {
+    .navbar {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+
+.navbar .logo {
+    display: block;
+    text-decoration: none;
+
+
+    font-family: 'Roboto', sans-serif;
+    color: rgb(33, 33, 33);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.navbar .navmenu,
+.navbar .navmenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul.navmenu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar .navmenu li {}
+
+.navbar .navmenu a {
+    display: block;
+    padding: 1em 2em;
+
+    font-family: 'Roboto', sans-serif;
+
+    text-decoration: none;
+    color: rgb(33, 33, 33);
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.navbar .navmenu a.active,
+.navbar .navmenu a:hover {
+    color: rgb(133, 33, 33);
+
+    background-image: url("../img/navmenu-hover.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
